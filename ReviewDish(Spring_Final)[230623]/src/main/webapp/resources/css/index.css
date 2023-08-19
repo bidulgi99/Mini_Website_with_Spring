@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+	background-color: #B2EBF4;
+}
+
+
+table {
+	border-radius: 5px;
+	font-family: G마켓 산스 TTF;
+}
+
+#loginDiv{
+	/*
+		좌표체계 (absolute or fixed)
+		absolute : html 기준으로 계산 -> html이 움직이면 같이 움직임
+		fixed : 웹 브라우져 기준으로 계산 -> html이 어떻게 되든...스크롤해도 그자리 그대로
+	*/
+	position : absolute;
+	/*좌표조절(left or right, top or bottom)*/
+	left: 50px;
+	top: 65px;
+}
+
+#siteMenu{
+	
+}
+
+#siteMenu td{
+	margin-left: 20px;
+}
+
+#siteTitle{
+	font-family: G마켓 산스 TTF;
+	font-size: 40px;
+	font-weight: bold;
+	color: #3A1D1D;
+}
+
+#siteTitleArea{
+	width: 100%;
+}
+
+#siteContentArea{
+	margin-top: 10%;
+	margin-left: 20%;
+}
+
+a{
+	text-decoration: none;
+	color: #3A1D1D;
+}
+
+
+.btnCl{
+	font-size: 20px;
+	
+}
+
+.btnCl :hover {
+	font-size: 22px;
+	color: red;
+}
+

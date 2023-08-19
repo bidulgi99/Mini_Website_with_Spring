@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seong.rd.member.MemberMapper">
+
+	<select id="getMemberById" resultType="com.seong.rd.member.Member"
+	parameterType="com.seong.rd.member.Member">
+		select * from rd_member where rm_id = #{rm_id}
+	</select>
+	
+	
+	<insert id="join" parameterType="com.seong.rd.member.Member">
+		insert into rd_member values(#{rm_id}, #{rm_pw}, #{rm_name},
+		#{rm_birthday}, #{rm_address},#{rm_photo})
+	</insert>
+	
+	<delete id="withdrawal"  parameterType="com.seong.rd.member.Member">
+		delete from rd_member where rm_id = #{rm_id}
+	
+	</delete>
+	
+	<update id="update" parameterType="com.seong.rd.member.Member">
+		UPDATE rd_member set rm_pw = #{rm_pw}, rm_name=#{rm_name},rm_address=#{rm_address}, rm_photo=#{rm_photo}  where rm_id =#{rm_id}
+	</update>
+	
+</mapper>

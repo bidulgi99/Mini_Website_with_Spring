@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+#joinTable{
+	
+	width: 500px;
+}
+
+#joinTitle{
+	font-size: 36px;
+	font-weight: bold;
+}
+
+
+.joinInput{
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.sn1{
+	text-align: center;
+	font-size: 18px;
+	width: 200px;
+	margin-top: 20px;
+}
+
+.sn2{
+	width: 5%;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+#joinBtn{
+	font-size: 30px;
+	border: 0;
+	color: #3A1D1D;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: G마켓 산스 TTF;
+	background-color: #B2EBF4;
+}
+
+#joinBtn:hover{
+	color: red;
+	font-size: 32px;
+}
+
+#withdrwalBtn{
+	font-size: 30px;
+	border: 0;
+	color: #3A1D1D;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: G마켓 산스 TTF;
+	background-color: #B2EBF4;
+}
+
+#withdrwalBtn:hover{
+	color: red;
+	font-size: 32px;
+}
+

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+#dataroomTable{
+	width: 1200px;;
+	
+	
+	
+}
+
+#dataroomWriteTable{
+	background-color: gray;
+	font-weight: bold;
+	font-size: 16px;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	
+}
+
+#file_title_area{
+	width: 350px;
+	
+}
+#file_file_area{
+	width: 25%;
+	
+}

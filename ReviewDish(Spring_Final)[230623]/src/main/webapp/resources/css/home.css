@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+
+
+#snsBoardTable{
+	width: 850px;
+}
+
+
+
+#searchInput{
+	width: 65%;
+	height : 20px;
+	font-weight: bold;
+	font-family: G마켓 산스 TTF;
+}
+
+.Btn{
+	font-family: G마켓 산스 TTF;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: yellow;
+	font-size: 20px;
+	border-radius: 5px;
+	
+}
+
+.Btn:hover{
+	font-size: 22px;
+	color: red;
+}
+
+.rBtn{
+	font-family: G마켓 산스 TTF;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: blue;
+	color: orange;
+	font-size: 16px;
+	border-radius: 5px;
+	
+}
+
+.rBtn:hover{
+	font-size: 18px;
+	color: red;
+}
+
+#snsNoArea{
+	width: 5%;
+}
+
+#snsWriterArea{
+	font-weight: bold;
+	font-size: 20px;
+	color:White;
+	
+}
+
+#snsTxtArea{
+	width: 70%;
+	font-size: 20px;
+}
+
+#homeSnsPhoto{
+	max-width: 130px;
+	max-height: auto;
+}
+
+#snsL{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+}
+#snsR{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+}
+
+#snsL:hover, #snsR:hover {
+	background-color: #75757533;
+}
+
+#replyInputBox{
+	width: 50%;
+	height: 22px;
+}

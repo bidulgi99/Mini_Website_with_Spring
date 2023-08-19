@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seong.rd.sns.SNSMapper">
+
+<insert id="write" parameterType="com.seong.rd.sns.SNSMsg">
+	insert into rd_sns values(rd_sns_seq.nextval, #{rs_writer}, #{rs_txt}, sysdate,#{rs_color})
+</insert>
+
+<select id="get" resultType="com.seong.rd.sns.SNSMsg">
+	select rs_no, rs_writer, rs_txt, rs_date, rs_color, rm_photo
+	from rd_sns, rd_member
+	where rs_writer = rm_id
+	order by rs_date desc
+</select>
+
+
+<select id="countAllMsg" resultType="java.lang.Integer">
+	select count(*) from rd_sns
+</select>
+
+<select id="getMsgCount" parameterType="com.seong.rd.sns.PageStartEnd" resultType="java.lang.Integer">
+	select count(*)
+	from rd_sns
+	where rs_writer like '%'||#{search}||'%'
+		or rs_txt like '%'||#{search}||'%' 
+</select>
+<select id="getUserMsgCount" parameterType="com.seong.rd.member.Member" resultType="java.lang.Integer">
+	select count(*)
+	from rd_sns
+	where rs_writer = #{rm_id}
+</select>
+
+<select id="getList" parameterType="com.seong.rd.sns.PageStartEnd" resultType="com.seong.rd.sns.SNSMsg">
+select rs_no, rs_writer, rs_txt, rs_date, rs_color, rm_photo
+ from (
+ 	select * 
+	from (
+	 	select rownum as rn, rs_no,rs_writer,rs_txt,rs_date,rs_color
+	 	from(
+	 		select *
+	 		from rd_sns
+	 		where rs_writer like '%'||#{search}||'%' or rs_txt like '%'||#{search}||'%'
+	 		order by rs_date desc
+	 	)
+ ) where rn &gt;= #{start} and rn &lt;= #{end}
+ ),
+ (
+ select rm_id, rm_photo
+	from rd_member
+	where rm_id in(
+		select rs_writer
+		from(
+			select rownum as rn, rs_writer
+		 	from(
+		 		select rs_writer
+		 		from rd_sns
+		 		where rs_writer like '%'||#{search}||'%' or rs_txt like '%'||#{search}||'%'
+		 		order by rs_date desc
+		 	)
+		)
+		where rn &gt;= #{start} and rn &lt;= #{end}
+	)
+ )
+ where rs_writer = rm_id
+ order by rs_date desc
+
+</select>
+
+
+<delete id="deleteMsg" parameterType="com.seong.rd.sns.SNSMsg">
+	delete from rd_sns where rs_no = #{rs_no}
+
+</delete>
+
+<update id="updateMsg" parameterType="com.seong.rd.sns.SNSMsg">
+	update rd_sns 
+	set rs_txt = #{rs_txt} 
+	where rs_no = #{rs_no}
+</update>
+
+
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seong.rd.reply.ReplyMapper">
+<insert id="writeReply" parameterType="com.seong.rd.reply.Reply">
+	insert into rd_reply values(rd_reply_seq.nextval ,#{rr_rs_no}, #{rr_writer}, #{rr_txt}, sysdate)
+</insert>
+
+<select id="getReply" parameterType="com.seong.rd.sns.SNSMsg"
+	resultType="com.seong.rd.reply.Reply">
+	select rr_no, rr_txt, rr_writer,rr_date,rr_rs_no
+	from rd_reply
+	where rr_rs_no = #{rs_no}
+	order by rr_date desc
+
+</select>
+
+<update id="update" parameterType="com.seong.rd.reply.Reply">
+	update rd_reply
+	set rr_txt = #{rr_txt} 
+	where rr_no = #{rr_no}
+</update>
+
+<delete id="delete" parameterType="com.seong.rd.reply.Reply">
+delete from rd_reply where rr_no = #{rr_no}
+</delete>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

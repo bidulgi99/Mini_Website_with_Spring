@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seong.rd.dataroom.DataroomMapper">
+
+<insert id="upload" parameterType="com.seong.rd.dataroom.Dataroom">
+	insert into rd_dataroom 
+	values(rd_dataroom_seq.nextval,#{rd_uploader},#{rd_title},#{rd_file},
+	#{rd_category},sysdate)
+</insert>
+
+<select id="getFileList" resultType="com.seong.rd.dataroom.Dataroom">
+	select *
+	from rd_dataroom
+	order by rd_date desc
+</select>
+
+<delete id="deleteFile" parameterType="com.seong.rd.dataroom.Dataroom">
+	delete from rd_dataroom
+	where rd_no = #{rd_no}
+
+</delete>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

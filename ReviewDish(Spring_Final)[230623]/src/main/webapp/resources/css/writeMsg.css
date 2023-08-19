@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+#writeMsgTable {
+	background-color: gray;
+	font-weight: bold;
+	font-size: 22px;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	width: 250px;
+	height: 250px;
+}
+
+#writeSNSTitleArea{
+	height: 16px;
+}
+
+#writeSNSTitle {
+	width: 95%;
+	font-family: G마켓 산스 TTF;
+	background-color: #D3D3D3;
+	border: 0;
+	font-weight: bold;
+}
+
+#writeSNSTxtArea {
+	
+}
+
+#writeSNSTxt {
+	resize: none;
+	background-color: #D3D3D3;
+	font-weight: bold;
+	width: 95%;
+	border: 0;
+	font-family: G마켓 산스 TTF;
+	height: 250px;
+}
+
+#writeSNSBtn {
+	font-weight: bold;
+	font-size: 24px;
+	background-color: gray;
+	font-family: G마켓 산스 TTF;
+	border:0;
+	cursor: pointer;
+}
+
+#writeSNSBtn:hover {
+	color: red;
+	font-size: 26px;
+}
